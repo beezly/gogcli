@@ -206,7 +206,7 @@ type ContactsCreateCmd struct {
 	Title        string   `name:"title" help:"Job title"`
 	URL          []string `name:"url" help:"URL (can be repeated for multiple URLs)"`
 	Note         string   `name:"note" help:"Note/biography"`
-	Address      []string `name:"address" help:"Postal address (can be repeated for multiple addresses)"`
+	Address      []string `name:"address" sep:";" help:"Postal address (can be repeated for multiple addresses)"`
 	Custom       []string `name:"custom" help:"Custom field as key=value (can be repeated)"`
 }
 
@@ -377,7 +377,7 @@ type ContactsUpdateCmd struct {
 	Title        string   `name:"title" help:"Job title (empty clears)"`
 	URL          []string `name:"url" help:"URL (can be repeated; empty clears all)"`
 	Note         string   `name:"note" help:"Note/biography (empty clears)"`
-	Address      []string `name:"address" help:"Postal address (can be repeated; empty clears all)"`
+	Address      []string `name:"address" sep:";" help:"Postal address (can be repeated; empty clears all)"`
 	Custom       []string `name:"custom" help:"Custom field as key=value (can be repeated; empty clears all)"`
 	FromFile     string   `name:"from-file" help:"Update from contact JSON file (use - for stdin)"`
 	IgnoreETag   bool     `name:"ignore-etag" help:"Allow updating even if the JSON etag is stale (may overwrite concurrent changes)"`
